@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Bell, Boxes, ChevronRight, ClipboardCheck, Command, Cpu, LayoutDashboard, Menu, PanelLeftClose, PanelLeftOpen, ShieldCheck, Wrench, X } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { cn } from "../lib/formatters";
-import susalabsMark from "../assets/susalabs-mark.svg";
+import susalabsMark from "../assets/susalabs-mark.png";
 
 const navItems = [
   { to: "/", label: "Dashboard", icon: LayoutDashboard, end: true },
@@ -67,8 +67,8 @@ export function AppShell({ children }) {
               aria-label="Go to dashboard"
               title="Go to dashboard"
             >
-              <div className="flex size-14 items-center justify-center overflow-hidden rounded-[1.6rem] bg-white p-2 shadow-[0_20px_45px_-30px_rgba(15,23,42,0.65)] ring-1 ring-white/20 transition group-hover:-translate-y-0.5 group-hover:shadow-[0_24px_50px_-30px_rgba(15,23,42,0.72)]">
-                <img src={susalabsMark} alt="SL mark" className="h-full w-full object-contain" />
+              <div className="flex size-15 items-center justify-center overflow-hidden rounded-[1.7rem] bg-white p-1.5 shadow-[0_20px_45px_-30px_rgba(15,23,42,0.65)] ring-1 ring-white/20 transition group-hover:-translate-y-0.5 group-hover:shadow-[0_24px_50px_-30px_rgba(15,23,42,0.72)]">
+                <img src={susalabsMark} alt="SJ mark" className="h-full w-full object-contain" />
               </div>
               {!isSidebarCollapsed ? (
                 <div className="min-w-0 flex-1">
