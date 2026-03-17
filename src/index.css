@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Instrument Sans", sans-serif;
+  --font-display: "Sora", sans-serif;
+
+  --color-shell-25: oklch(98.4% 0.008 240);
+  --color-shell-50: oklch(96.7% 0.011 244);
+  --color-shell-950: oklch(24% 0.038 255);
+  --color-brand-50: oklch(97.8% 0.015 225);
+  --color-brand-100: oklch(95% 0.03 225);
+  --color-brand-200: oklch(89% 0.058 226);
+  --color-brand-300: oklch(81% 0.09 229);
+  --color-brand-500: oklch(58% 0.14 240);
+  --color-brand-600: oklch(49% 0.128 245);
+  --color-brand-700: oklch(39% 0.106 251);
+  --color-ink-950: oklch(22% 0.02 255);
+  --color-ink-700: oklch(39% 0.026 254);
+  --color-ink-500: oklch(56% 0.02 252);
+  --color-ink-400: oklch(66% 0.016 249);
+  --color-line: oklch(90% 0.013 250);
+
+  --animate-page-in: page-in 480ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  @keyframes page-in {
+    from {
+      opacity: 0;
+      transform: translateY(18px) scale(0.99);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+}
+
+:root {
+  font-family: var(--font-sans);
+  color: var(--color-ink-700);
+  background: var(--color-shell-25);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--color-shell-25);
+  color: var(--color-ink-700);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: rgba(12, 111, 168, 0.18);
+}
+
+@layer base {
+  a {
+    @apply no-underline;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-[2rem] border border-[var(--color-line)] bg-white/92 p-6 shadow-[0_30px_60px_-42px_rgba(15,23,42,0.45)] backdrop-blur-sm;
+  }
+
+  .panel-alt {
+    @apply rounded-[1.7rem] border border-[var(--color-line)] bg-[linear-gradient(180deg,rgba(247,250,255,0.96),rgba(255,255,255,0.88))] p-5;
+  }
+
+  .field {
+    @apply h-12 w-full rounded-[1.1rem] border border-[var(--color-line)] bg-white px-4 text-sm text-[var(--color-ink-700)] outline-none transition placeholder:text-[var(--color-ink-400)] focus:border-[var(--color-brand-300)] focus:ring-4 focus:ring-[rgba(12,111,168,0.12)];
+  }
+
+  .select-field {
+    @apply h-12 w-full appearance-none rounded-[1.1rem] border border-[var(--color-line)] bg-white px-4 pr-10 text-sm text-[var(--color-ink-700)] outline-none transition placeholder:text-[var(--color-ink-400)] focus:border-[var(--color-brand-300)] focus:ring-4 focus:ring-[rgba(12,111,168,0.12)];
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center rounded-[1.1rem] bg-[var(--color-shell-950)] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[var(--color-brand-700)] focus:outline-none focus:ring-4 focus:ring-[rgba(12,111,168,0.14)];
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center justify-center rounded-[1.1rem] border border-[var(--color-line)] bg-white px-5 py-3 text-sm font-semibold text-[var(--color-ink-700)] transition hover:-translate-y-0.5 hover:border-[var(--color-brand-200)] hover:text-[var(--color-brand-700)] focus:outline-none focus:ring-4 focus:ring-[rgba(12,111,168,0.10)];
+  }
+
+  .icon-button {
+    @apply inline-flex size-10 items-center justify-center rounded-[1rem] border border-[var(--color-line)] bg-white text-[var(--color-ink-500)] transition hover:-translate-y-0.5 hover:border-[var(--color-brand-200)] hover:text-[var(--color-brand-700)] disabled:cursor-not-allowed disabled:opacity-45;
+  }
+
+  .metric-shine::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), transparent 30%, transparent 68%, rgba(12, 111, 168, 0.08));
+    pointer-events: none;
+  }
+
+  .page-enter {
+    animation: var(--animate-page-in);
+  }
+
+  .soft-scroll::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+  }
+
+  .soft-scroll::-webkit-scrollbar-thumb {
+    background: rgba(98, 121, 151, 0.32);
+    border-radius: 999px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
