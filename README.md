@@ -1,4 +1,4 @@
-# Susalabs RFID CRM
+# Susalabs RFID System
 
 Enterprise Asset Management dashboard for RFID-driven operations, verification, movement tracking, maintenance, and lifecycle visibility.
 

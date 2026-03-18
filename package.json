@@ -1,26 +1,14 @@
 {
-  "name": "rfid-crm",
+  "name": "rfid-system",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite --host",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "lucide-react": "^0.577.0",
-    "qrcode.react": "^4.2.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "react-hot-toast": "^2.6.0",
-    "react-router-dom": "^7.13.1",
-    "recharts": "^3.8.0"
-  },
-  "devDependencies": {
-    "@tailwindcss/vite": "^4.2.1",
-    "@vitejs/plugin-react": "^5.1.1",
-    "tailwindcss": "^4.2.1",
-    "vite": "^7.3.1"
+    "preinstall": "node.cmd -e \"console.error('Run npm install inside click or server, or use npm run install:all from the repo root.'); process.exit(1)\"",
+    "dev": "cmd /c \"cd /d click && npm.cmd run dev\"",
+    "build": "cmd /c \"cd /d click && npm.cmd run build\"",
+    "preview": "cmd /c \"cd /d click && npm.cmd run preview\"",
+    "server": "cmd /c \"cd /d server && npm.cmd run server\"",
+    "seed": "cmd /c \"cd /d server && npm.cmd run seed\"",
+    "install:all": "cmd /c \"cd /d click && npm.cmd install\" && cmd /c \"cd /d server && npm.cmd install\""
   }
 }

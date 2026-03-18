@@ -1,0 +1,26 @@
+{
+  "name": "rfid-system-client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node.cmd .\\node_modules\\vite\\bin\\vite.js --host",
+    "build": "node.cmd .\\node_modules\\vite\\bin\\vite.js build",
+    "preview": "node.cmd .\\node_modules\\vite\\bin\\vite.js preview"
+  },
+  "dependencies": {
+    "lucide-react": "^0.577.0",
+    "qrcode.react": "^4.2.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-hot-toast": "^2.6.0",
+    "react-router-dom": "^7.13.1",
+    "recharts": "^3.8.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "@vitejs/plugin-react": "^5.1.1",
+    "tailwindcss": "^4.2.1",
+    "vite": "^7.3.1"
+  }
+}

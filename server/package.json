@@ -1,0 +1,21 @@
+{
+  "name": "rfid-system-server",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "server": "node.cmd index.js",
+    "start": "node.cmd index.js",
+    "seed": "node.cmd seed.js",
+    "stop": "node.cmd stop.js",
+    "status": "node.cmd status.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.16.3"
+  }
+}
